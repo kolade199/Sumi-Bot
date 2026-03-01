@@ -40,7 +40,7 @@ module.exports = {
       
       // Check if already admin using fresh data
       if (foundParticipant.admin === 'admin' || foundParticipant.admin === 'superadmin') {
-        return extra.reply('Hes already an admin!');
+        return extra.reply('already an admin!');
       }
       
       await sock.groupParticipantsUpdate(extra.from, [target], 'promote');
