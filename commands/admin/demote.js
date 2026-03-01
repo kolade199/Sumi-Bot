@@ -25,7 +25,7 @@ module.exports = {
       } else if (ctx?.participant && ctx.stanzaId && ctx.quotedMessage) {
         target = ctx.participant;
       } else {
-        return extra.reply('Woe to whoever is demoted from admin!\n\nExample: .demote @user');
+        return extra.reply('Woe to whoever is demoted from admin!\n\n tag One');
       }
       
       // Fetch FRESH group metadata to avoid stale cache
