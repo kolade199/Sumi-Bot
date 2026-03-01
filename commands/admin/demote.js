@@ -25,7 +25,7 @@ module.exports = {
       } else if (ctx?.participant && ctx.stanzaId && ctx.quotedMessage) {
         target = ctx.participant;
       } else {
-        return extra.reply('❌ Please mention or reply to the user to demote!\n\nExample: .demote @user');
+        return extra.reply('Woe to whoever is demoted from admin!\n\nExample: .demote @user');
       }
       
       // Fetch FRESH group metadata to avoid stale cache
@@ -35,18 +35,18 @@ module.exports = {
       const foundParticipant = findParticipant(freshMetadata.participants, target);
       
       if (!foundParticipant) {
-        return extra.reply('❌ User not found in group!');
+        return extra.reply('he seems to have already left the group!');
       }
       
       // Check if user is admin using fresh data
       if (foundParticipant.admin !== 'admin' && foundParticipant.admin !== 'superadmin') {
-        return extra.reply('❌ This user is not an admin!');
+        return extra.reply('That would have been a bummer for him but hes not admin');
       }
       
       await sock.groupParticipantsUpdate(extra.from, [target], 'demote');
       
       await sock.sendMessage(extra.from, {
-        text: `✅ @${target.split('@')[0]} is no longer an admin!`,
+        text: `✅ @${target.split('@')[0]} has been demoted!`,
         mentions: [target]
       }, { quoted: msg });
       
