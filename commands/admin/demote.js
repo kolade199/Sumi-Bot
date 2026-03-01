@@ -46,12 +46,12 @@ module.exports = {
       await sock.groupParticipantsUpdate(extra.from, [target], 'demote');
       
       await sock.sendMessage(extra.from, {
-        text: `@${target.split('@')[0]} has been demoted!`,
+        text: `demoted! sucks to be you`,
         mentions: [target]
       }, { quoted: msg });
       
     } catch (error) {
-      await extra.reply(`❌ Error: ${error.message}`);
+      await extra.reply(` Error: ${error.message}`);
     }
   }
 };
