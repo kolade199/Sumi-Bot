@@ -25,7 +25,7 @@ module.exports = {
       } else if (ctx?.participant && ctx.stanzaId && ctx.quotedMessage) {
         target = ctx.participant;
       } else {
-        return extra.reply('Who is Worthy of promotion!\n\nExample: .promote @user');
+        return extra.reply('Who is Worthy of promotion!\n\n tag One');
       }
       
       // Fetch FRESH group metadata to avoid stale cache
