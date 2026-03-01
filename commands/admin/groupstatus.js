@@ -26,7 +26,7 @@ module.exports = {
 
       // Only inside groups
       if (!extra.isGroup) {
-        return extra.reply('👥 This command can only be used in groups.');
+        return extra.reply(' You can only use this in groups.');
       }
 
       const caption = (args.join(' ') || '').trim();
@@ -54,10 +54,10 @@ module.exports = {
             text: caption,
             backgroundColor: PURPLE_COLOR,
           });
-          return extra.reply('✅ Text group status posted!');
+          return extra.reply('status posted!');
         } catch (e) {
           console.error('groupstatus text error:', e);
-          return extra.reply('❌ Failed to post text group status: ' + (e.message || e));
+          return extra.reply('I cant seem to post that group status,admin: ' + (e.message || e));
         }
       }
 
@@ -98,46 +98,46 @@ module.exports = {
             image: buf,
             caption: caption || '',
           });
-          return extra.reply('✅ Image group status posted!');
+          return extra.reply('image status posted!');
         } catch (e) {
           console.error('groupstatus image error:', e);
-          return extra.reply('❌ Failed to post image group status: ' + (e.message || e));
+          return extra.reply('Cant seem to post that group image status: ' + (e.message || e));
         }
       }
 
       // VIDEO
       if (/video/i.test(mtype)) {
-        await extra.reply('⏳ Posting video group status...');
+        await extra.reply('Im on it, admin...');
         let buf;
         try {
           buf = await downloadBuf();
         } catch {
-          return extra.reply('❌ Failed to download video');
+          return extra.reply(' video');
         }
-        if (!buf) return extra.reply('❌ Could not download video');
+        if (!buf) return extra.reply('I Could not download the video');
 
         try {
           await groupStatus(sock, from, {
             video: buf,
             caption: caption || '',
           });
-          return extra.reply('✅ Video group status posted!');
+          return extra.reply(' Video group status posted!');
         } catch (e) {
           console.error('groupstatus video error:', e);
-          return extra.reply('❌ Failed to post video group status: ' + (e.message || e));
+          return extra.reply('i could not post the video group status: ' + (e.message || e));
         }
       }
 
       // AUDIO (voice-style group status)
       if (/audio/i.test(mtype)) {
-        await extra.reply('⏳ Posting audio group status...');
+        await extra.reply(' Posting audio group status...');
         let buf;
         try {
           buf = await downloadBuf();
         } catch {
-          return extra.reply('❌ Failed to download audio');
+          return extra.reply('Failed to download audio');
         }
-        if (!buf) return extra.reply('❌ Could not download audio');
+        if (!buf) return extra.reply('Could not download audio');
 
         let vn;
         try {
