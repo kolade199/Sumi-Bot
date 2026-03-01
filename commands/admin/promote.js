@@ -46,7 +46,7 @@ module.exports = {
       await sock.groupParticipantsUpdate(extra.from, [target], 'promote');
       
       await sock.sendMessage(extra.from, {
-        text: `@${target.split('@')[0]} has been granted the power of an admin!`,
+        text: `A Worthy subject has been granted the power of an admin!`,
         mentions: [target]
       }, { quoted: msg });
       
