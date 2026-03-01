@@ -20,7 +20,7 @@ module.exports = {
         let text = `🔗 *GROUP INVITE LINK*\n\n`;
         text += `📱 Group: ${extra.groupMetadata.subject}\n`;
         text += `🔗 Link: ${link}\n\n`;
-        text += `⚠️ Don't share this link publicly!`;
+        text += `Ooo who are you planning to invite?`;
         
         await extra.reply(text);
         
