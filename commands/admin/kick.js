@@ -31,7 +31,7 @@ module.exports = {
       }
       
       if (usersToKick.length === 0) {
-        return extra.reply('👤 Mention or reply to the user you want to kick.');
+        return extra.reply('Who shall i kick.');
       }
       
       const botId = sock.user?.id || '';
@@ -93,19 +93,19 @@ module.exports = {
       });
       
       if (isTryingToKickBot) {
-        await extra.reply('❌ Cannot kick myself!');
+        await extra.reply(' Cannot kick myself!');
         return;
       }
       
       await sock.groupParticipantsUpdate(chatId, usersToKick, 'remove');
       
       const usernames = usersToKick.map((jid) => `@${jid.split('@')[0]}`);
-      const text = `✅ ${usernames.join(', ')} has been kicked successfully.`;
+      const text = `✅ ${usernames.join(', ')}  kicked, clean out.`;
       
       await sock.sendMessage(extra.from, { text, mentions: usersToKick }, { quoted: msg });
     } catch (error) {
       console.error('Kick command error:', error);
-      await extra.reply('❌ Failed to kick user(s). Make sure I am admin.');
+      await extra.reply('it appears i cant kick this one (s). Make sure I am admin.');
     }
   },
 };
