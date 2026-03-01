@@ -46,7 +46,7 @@ module.exports = {
       await sock.groupParticipantsUpdate(extra.from, [target], 'demote');
       
       await sock.sendMessage(extra.from, {
-        text: `✅ @${target.split('@')[0]} has been demoted!`,
+        text: `@${target.split('@')[0]} has been demoted!`,
         mentions: [target]
       }, { quoted: msg });
       
