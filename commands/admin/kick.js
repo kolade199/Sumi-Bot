@@ -100,7 +100,7 @@ module.exports = {
       await sock.groupParticipantsUpdate(chatId, usersToKick, 'remove');
       
       const usernames = usersToKick.map((jid) => `@${jid.split('@')[0]}`);
-      const text = `✅ ${usernames.join(', ')}  kicked, clean out.`;
+      const text = `kicked out clean.`;
       
       await sock.sendMessage(extra.from, { text, mentions: usersToKick }, { quoted: msg });
     } catch (error) {
