@@ -63,12 +63,12 @@ module.exports = {
     // Message Configuration
     messages: {
       wait: '⏳ Please wait...',
-      success: '✅ Success!',
+      success: 'Success!',
       error: '❌ Error occurred!',
       ownerOnly: '👑 Only Dr X can command this!',
-      adminOnly: '🛡️ This command is only for group admins!',
-      groupOnly: '👥 This command can only be used in groups!',
-      privateOnly: '💬 This command can only be used in private chat!',
+      adminOnly: '🛡️ Only those that are bestowed the power of admin can use this command!',
+      groupOnly: '👥 You can only command this in groups!',
+      privateOnly: 'You can only command this in private chat!',
       botAdminNeeded: 'make me admin and i will do it!',
       invalidCommand: '❓ Invalid command! Type .menu for help or ask Dr X'
     },
