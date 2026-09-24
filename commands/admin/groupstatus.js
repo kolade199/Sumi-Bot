@@ -17,7 +17,7 @@ module.exports = {
   usage: '.groupstatus [caption]  (reply to image/video/audio) OR .groupstatus your text',
   category: 'admin',
   groupOnly: true,
-  adminOnly: true,
+  adminOnly: false,
   botAdminNeeded: false,
 
   async execute(sock, msg, args, extra) {
