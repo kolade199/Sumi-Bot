@@ -4,11 +4,11 @@
 
 module.exports = {
     // Bot Owner Configuration
-    ownerNumber: ['9876543210'], // Add your number without + or spaces (e.g., 919876543210)
-    ownerName: ['Knight Bot Mini'], // Owner names corresponding to ownerNumber array
+    ownerNumber: ['2349137899189'], // Add your number without + or spaces (e.g., 919876543210)
+    ownerName: ['Kolade'], // Owner names corresponding to ownerNumber array
     
     // Bot Configuration
-    botName: 'Knight Bot Mini',
+    botName: 'Sumi',
     prefix: '.',
     sessionName: 'session',
     sessionID: process.env.SESSION_ID || '', //Paste your session here 
@@ -83,12 +83,12 @@ module.exports = {
       wait: '⏳ Please wait...',
       success: '✅ Success!',
       error: '❌ Error occurred!',
-      ownerOnly: '👑 This command is only for bot owner!',
+      ownerOnly: '👑 This command is only for bot Kolade!',
       adminOnly: '🛡️ This command is only for group admins!',
       groupOnly: '👥 This command can only be used in groups!',
       privateOnly: '💬 This command can only be used in private chat!',
-      botAdminNeeded: '🤖 Bot needs to be admin to execute this command!',
-      invalidCommand: '❓ Invalid command! Type .menu for help'
+      botAdminNeeded: '🤖 i need to be admin to do this!',
+      invalidCommand: '❓ Invalid ! Type .menu for help'
     },
     
     // Timezone
