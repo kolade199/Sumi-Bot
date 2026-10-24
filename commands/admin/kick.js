@@ -101,12 +101,12 @@ module.exports = {
       
       const usernames = usersToKick.map((jid) => `@${jid.split('@')[0]}`);
       const verb = extra.commandName === 'fuck' ? 'fu*ked' : 'kicked';
-      const text = `✅ ${usernames.join(', ')} has been ${verb} successfully.`;
+      const text = `✅ ${usernames.join(', ')} has been ${verb} .`;
       
       await sock.sendMessage(extra.from, { text, mentions: usersToKick }, { quoted: msg });
     } catch (error) {
       console.error('Kick command error:', error);
-      await extra.reply('❌ Failed to kick user(s). Make sure I am admin.');
+      await extra.reply('❌ Failed to kick user(s). I am not admin.');
     }
   },
 };
