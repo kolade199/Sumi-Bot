@@ -35,18 +35,18 @@ module.exports = {
       const foundParticipant = findParticipant(freshMetadata.participants, target);
       
       if (!foundParticipant) {
-        return extra.reply('❌ User not found in group!');
+        return extra.reply('❌ this person is not in group!');
       }
       
       // Check if user is admin using fresh data
       if (foundParticipant.admin !== 'admin' && foundParticipant.admin !== 'superadmin') {
-        return extra.reply('❌ This user is not an admin!');
+        return extra.reply('❌ This person is not an admin!');
       }
       
       await sock.groupParticipantsUpdate(extra.from, [target], 'demote');
       
       await sock.sendMessage(extra.from, {
-        text: `✅ @${target.split('@')[0]} is no longer an admin!`,
+        text: `✅ @${target.split('@')[0]}  striped of power!`,
         mentions: [target]
       }, { quoted: msg });
       
